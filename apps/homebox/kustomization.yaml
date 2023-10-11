@@ -4,6 +4,6 @@ namespace: default
 resources:
   - pv.yml
   - pvc.yml
-  - deploymnet.yml
+  - deployment.yml
   - service.yml
   - ingress.yml
