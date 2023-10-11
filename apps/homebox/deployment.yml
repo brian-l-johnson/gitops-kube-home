@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homebox
+  labels:
+    app: homebox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homebox
+  template:
+    metadata:
+      labels:
+        app: homebox
+    spec:
+      volumes:
+        - name: homebox-nfs
+          persistentVolumeClaim:
+            claimName: homebox-nfs
+      containers:
+        - name: homebox
+          image: ghcr.io/hay-kot/homebox:latest
+          ports:
+            - containerPort: 7745
+          volumeMounts:
+            - name: homebox-nfs
+              mountPath: /data
+      nodeSelector:
+          kubernetes.io/arch: amd64
