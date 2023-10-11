@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app
+  namespace: miniflux
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: stepca-prod
+spec:
+  rules:
+  - host: miniflux.kube.home
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app
+            port:
+              number: 8080
+  tls:
+    - secretName: miniflux-tls
+      hosts:
+        - miniflux.kube.home

@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: app
+  namespace: miniflux
+spec:
+  selector:
+    app: app
+  ports:
+  - protocol: TCP
+    port: 8080
+  clusterIP: None

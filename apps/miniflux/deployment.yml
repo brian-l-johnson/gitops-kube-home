@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: miniflux
+  name: app
+  labels:
+    app: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - image: miniflux/miniflux:2.0.48
+          name: app
+          env:
+          # This is necessary for the miniflux to update the db schema, even on an empty DB
+          - name: CREATE_ADMIN
+            value: "1"
+          - name: RUN_MIGRATIONS
+            value: "1"
+          - name: ADMIN_USERNAME
+            value: "admin"
+          - name: ADMIN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: miniflux-credentials
+                key: admin-password.secret
+          - name: DATABASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: miniflux-credentials
+                key: database-url.secret
