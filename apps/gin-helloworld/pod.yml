@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gin-helloworld
+  labels:
+    app: gin-helloworld
+spec:
+  containers:
+    - name: gin-helloworld
+      image: docker-registry.home:5000/gin-helloworld:1.0
+      ports:
+        - containerPort: 8888
