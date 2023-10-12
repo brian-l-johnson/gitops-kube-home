@@ -5,3 +5,4 @@ resources:
   - homebox
   - miniflux
   - home-monitor-frontend
+  - uptime-kuma
