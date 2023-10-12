@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - gin-helloworld
   - homebox
-  #- miniflux
+  - miniflux
