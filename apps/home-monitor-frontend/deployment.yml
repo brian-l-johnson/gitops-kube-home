@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: climate-monitor-frontend
+  labels:
+    app: climate-monitor-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: climate-monitor-frontend
+  template:
+    metadata:
+      labels:
+        app: climate-monitor-frontend
+    spec:
+      containers:
+        - name: home-monitor-frontend
+          image: docker-registry.home:5000/home-monitor-frontend:0.1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
