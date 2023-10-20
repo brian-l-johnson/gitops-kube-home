@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: browser
+  name: browser-webrtc
   namespace: browser
   labels:
-    app: browser
+    app: browser-webrtc
 spec:
   type: LoadBalencer
   ports:
