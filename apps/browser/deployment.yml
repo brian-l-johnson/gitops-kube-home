@@ -18,11 +18,14 @@ spec:
           # expose the container's port
           ports:
             - containerPort: 8080
+            - containerPort: 52000/udp
           env:
             - name: NEKO_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: neko-password
                   key: neko-password
+            - name: NEKO_ICELITE
+              value: "1"
       nodeSelector:
           kubernetes.io/arch: arm64
