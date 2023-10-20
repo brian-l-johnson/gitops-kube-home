@@ -20,14 +20,9 @@ spec:
             - containerPort: 8080
           env:
             - name: NEKO_PASSWORD
-                valueFrom:
-                  secretKeyRef:
-                    name: neko_password
-                    key: NEKO_PASSWORD
-              name: NEKO_PASSWORD_ADMIN
-                valueFrom:
-                  secretKeyFef:
-                    name: neko_password
-                    key: NEKO_PASSWORD_ADMIN
+              valueFrom:
+                secretKeyRef:
+                  name: neko_password
+                  key: NEKO_PASSWORD
       nodeSelector:
           kubernetes.io/arch: arm64
