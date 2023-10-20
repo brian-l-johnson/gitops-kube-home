@@ -11,5 +11,8 @@ spec:
     - port: 52000
       targetPort: 52000
       protocol: UDP
+    - port: 52001
+      targetPort: 52001
+      protocol: UDP
   selector:
     app: browser
