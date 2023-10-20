@@ -6,7 +6,7 @@ metadata:
   labels:
     app: browser-webrtc
 spec:
-  type: LoadBalencer
+  type: LoadBalancer
   ports:
     - port: 52000
       targetPort: 52000
