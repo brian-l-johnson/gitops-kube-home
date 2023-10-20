@@ -6,3 +6,4 @@ resources:
   - miniflux
   - home-monitor-frontend
   - uptime-kuma
+  - browser

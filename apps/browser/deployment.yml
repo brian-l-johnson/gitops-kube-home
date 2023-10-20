@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: browser
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: browser
+  template:
+    metadata:
+      labels:
+        app: browser
+    spec:
+      containers:
+        - name: browser
+          image: m1k1o/neko:firefox
+          # expose the container's port
+          ports:
+            - containerPort: 8080
