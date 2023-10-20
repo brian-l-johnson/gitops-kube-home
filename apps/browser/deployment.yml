@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: browser
-          image: m1k1o/neko:firefox
+          image: m1k1o/neko:arm-firefox
           # expose the container's port
           ports:
             - containerPort: 8080
