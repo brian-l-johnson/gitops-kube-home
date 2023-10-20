@@ -18,7 +18,9 @@ spec:
           # expose the container's port
           ports:
             - containerPort: 8080
+              protocol: TCP
             - containerPort: 52000
+              protocol: UDP
           env:
             - name: NEKO_PASSWORD
               valueFrom:
