@@ -18,3 +18,5 @@ spec:
           # expose the container's port
           ports:
             - containerPort: 8080
+      nodeSelector:
+          kubernetes.io/arch: arm64
