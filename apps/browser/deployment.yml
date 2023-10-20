@@ -22,7 +22,7 @@ spec:
             - name: NEKO_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: neko_password
-                  key: NEKO_PASSWORD
+                  name: neko-password
+                  key: neko-password
       nodeSelector:
           kubernetes.io/arch: arm64
