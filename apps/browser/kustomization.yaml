@@ -4,5 +4,6 @@ namespace: default
 resources:
   - deployment.yml
   - service.yml
+  - service-webrtc.yml
   - ingress.yml
   - neko-password-sealed.yaml
