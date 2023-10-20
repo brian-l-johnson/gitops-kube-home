@@ -27,5 +27,7 @@ spec:
                   key: neko-password
             - name: NEKO_ICELITE
               value: "1"
+            - name: NEKO_EPR
+              value: "52000"
       nodeSelector:
           kubernetes.io/arch: arm64
