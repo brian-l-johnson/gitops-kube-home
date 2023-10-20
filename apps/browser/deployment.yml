@@ -30,6 +30,8 @@ spec:
             - name: NEKO_ICELITE
               value: "1"
             - name: NEKO_EPR
-              value: "52000"
+              value: 52000
+            - name: NEKO_SCREEN
+              value: "1920x1080@30"
       nodeSelector:
           kubernetes.io/arch: arm64
