@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: browser
-          image: m1k1o/neko:arm-firefox
+          image: m1k1o/neko:firefox
           # expose the container's port
           ports:
             - containerPort: 8080
@@ -34,4 +34,4 @@ spec:
             - name: NEKO_SCREEN
               value: "1920x1080@30"
       nodeSelector:
-          kubernetes.io/arch: arm64
+          kubernetes.io/arch: amd64
