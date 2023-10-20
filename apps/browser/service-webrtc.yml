@@ -8,10 +8,12 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 52000
+    - name: epr1
+      port: 52000
       targetPort: 52000
       protocol: UDP
-    - port: 52001
+    - name: epr2
+      port: 52001
       targetPort: 52001
       protocol: UDP
   selector:
