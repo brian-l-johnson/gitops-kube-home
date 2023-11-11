@@ -15,6 +15,7 @@ spec:
         namespace: awx
       interval: 1m
   values:
-    node_selector: |
-      kubernetes.io/arch: amd64
-      kubernetes.io/os: linux
+    spec:
+      node_selector: |
+        kubernetes.io/arch: amd64
+        kubernetes.io/os: linux
