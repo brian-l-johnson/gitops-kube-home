@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: awx-operator-controller-manager
+  namespace: awx
+spec:
+  template:
+    spec:
+      nodeSelector:
+        kubernetes.io/arch: amd64

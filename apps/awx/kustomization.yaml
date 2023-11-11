@@ -5,3 +5,5 @@ resources:
   - namespace.yml
   - repository.yml
   - release.yml
+patches:
+  - path: patch.yml
