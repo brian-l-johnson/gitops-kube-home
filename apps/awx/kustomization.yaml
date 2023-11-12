@@ -3,7 +3,4 @@ kind: Kustomization
 namespace: awx
 resources:
   - namespace.yml
-  - repository.yml
-  - release.yml
-patches:
-  - path: patch.yml
+  - deployment.yml

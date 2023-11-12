@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: awx-operator
+  namespace: awx
+  labels:
+    app: awx-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: awx-operator
+  template:
+    metadata:
+      labels:
+        app: awx-operator
+    spec:
+      containers:
+        - name: awx-operator
+          image: quay.io/ansible/awx-operator:23.4.0
+      nodeSelector:
+          kubernetes.io/arch: amd64
