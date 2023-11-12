@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: awx-operator
-          image: quay.io/ansible/awx-operator:v23.4.0
+          image: quay.io/ansible/awx-operator:latest
       nodeSelector:
           kubernetes.io/arch: amd64
