@@ -7,4 +7,4 @@ resources:
   - home-monitor-frontend
   - uptime-kuma
   #- browser
-  - awx
+  #- awx
