@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  name: photoprism
+  namespace: photoprism
+spec:
+  rules:
+  - host: photoprism.kube.home
+    http:
+      paths:
+      - backend:
+          service:
+            name: photoprism
+            port:
+              name: http
+        path: /
+        pathType: Prefix
