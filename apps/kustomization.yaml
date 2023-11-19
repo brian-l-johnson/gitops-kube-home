@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - gin-helloworld
   - homebox
-  #- miniflux
+  - miniflux
   - home-monitor-frontend
   - uptime-kuma
   #- browser
