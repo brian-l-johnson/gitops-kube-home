@@ -3,6 +3,8 @@ kind: Kustomization
 namespace: memos
 resources:
   - namespace.yml
+  - pv.yml
+  - pvc.yml
   - deployment.yml
   - service.yml
   - ingress.yml
