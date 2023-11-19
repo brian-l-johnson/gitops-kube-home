@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: miniflux
 resources:
   - namespace.yml
+  - secret-sealed.yml
   - deployment.yml
   - service.yml
   - ingress.yml
