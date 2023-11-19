@@ -21,9 +21,9 @@ spec:
             claimName: memos-nfs
       containers:
         - name: memos
-          image: ghcr.io/hay-kot/homebox:v0.10.2
+          image: ghcr.io/usememos/memos:0.17.1
           ports:
             - containerPort: 7745
           volumeMounts:
             - name: memos-nfs
-              mountPath: //var/opt/memos
+              mountPath: /var/opt/memos
