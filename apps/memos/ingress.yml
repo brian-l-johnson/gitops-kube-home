@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  name: memos
+  namespace: memos
+spec:
+  rules:
+  - host: memos.kube.home
+    http:
+      paths:
+      - backend:
+          service:
+            name: memos
+            port:
+              name: http
+        path: /
+        pathType: Prefix

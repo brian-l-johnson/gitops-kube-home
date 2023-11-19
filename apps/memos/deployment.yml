@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: memos
+  namespace: memos
+spec:
+  selector:
+    matchLabels:
+      app: memos
+  serviceName: memos
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: memos
+    spec:
+      nodeSelector:
+          kubernetes.io/arch: amd64
+      containers:
+      - name: memos
+        image: ghcr.io/usememos/memos:0.17.0
+        ports:
+        - containerPort: 5230
+          name: http
+        volumeMounts:
+        - mountPath: /var/opt/memos
+          name: originals
+      volumes:
+      - name: memos
+        nfs:
+          path: /mnt/tank/kubestore/memos
+          server: truenas.home
