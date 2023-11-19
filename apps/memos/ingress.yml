@@ -14,6 +14,6 @@ spec:
           service:
             name: memos-service
             port:
-              name: http
+              number: 5230
         path: /
         pathType: Prefix

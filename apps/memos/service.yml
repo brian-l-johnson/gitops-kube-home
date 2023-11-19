@@ -8,7 +8,6 @@ spec:
   - name: http
     port: 5230
     protocol: TCP
-    targetPort: http
   selector:
     app: memos
   type: ClusterIP
