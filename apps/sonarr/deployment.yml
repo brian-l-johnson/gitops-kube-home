@@ -28,7 +28,7 @@ spec:
           ports:
             - containerPort: 8989
           volumeMounts:
-            - name: sonar-nfs
+            - name: sonarr-nfs
               mountPath: /config
             - name: downloads
               mountPath: /data
