@@ -16,7 +16,7 @@ spec:
         app: sonarr
     spec:
       volumes:
-        - name: sonar-nfs
+        - name: sonarr-nfs
           persistentVolumeClaim:
             claimName: sonarr-nfs
         - name: downloads
