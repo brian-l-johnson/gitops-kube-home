@@ -18,7 +18,7 @@ spec:
       volumes:
         - name: sonar-nfs
           persistentVolumeClaim:
-            claimName: sonar-nfs
+            claimName: sonarr-nfs
         - name: downloads
           persistentVolumeClaim:
             claimName: download
