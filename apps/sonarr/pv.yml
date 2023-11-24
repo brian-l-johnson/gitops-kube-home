@@ -9,7 +9,6 @@ spec:
   accessModes:
     - ReadWriteOnce # Access modes are defined below
   storageClassName: slow
-  persistentVolumeReclaimPolicy: Recycle # Reclaim policies are defined below
   nfs:
     server: truenas.home # Please change this to your NFS server
     path: /mnt/tank/kubestore/sonarr # Please change this to the relevant share
