@@ -31,11 +31,11 @@ spec:
           - name: PGID
             value: "1000"
           - name: UMASK
-            value: ""
+            value: "777"
           - name: TZ
             value: "Etc/UTC"
           - name: PERMISSIONS
-            value: ""
+            value: "777"
           ports:
             - containerPort: 8989
           volumeMounts:
