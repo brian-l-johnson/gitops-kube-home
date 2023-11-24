@@ -6,7 +6,7 @@ metadata:
 spec:
   storageClassName: slow
   accessModes:
-    - ReadWriteOnce # Access modes for volumes is defined under Persistent Volumes
+    - ReadWriteMany # Access modes for volumes is defined under Persistent Volumes
   resources:
     requests:
-      storage: 10Gi # volume size requested
+      storage: 100Gi # volume size requested
