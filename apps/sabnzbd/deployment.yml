@@ -18,7 +18,7 @@ spec:
       volumes:
         - name: sabnzbd-nfs
           persistentVolumeClaim:
-            claimName: sabnzbd-nfs
+            claimName: sabnzbd-config
         - name: downloads
           persistentVolumeClaim:
             claimName: download
@@ -39,7 +39,7 @@ spec:
           ports:
             - containerPort: 8989
           volumeMounts:
-            - name: sabnzbd-nfs
+            - name: sabnzbd-config
               mountPath: /config
             - name: downloads
               mountPath: /data
