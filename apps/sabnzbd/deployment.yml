@@ -31,7 +31,7 @@ spec:
           - name: PGID
             value: "1000"
           - name: UMASK
-            value: "777"
+            value: "002"
           - name: TZ
             value: "Etc/UTC"
           - name: PERMISSIONS
