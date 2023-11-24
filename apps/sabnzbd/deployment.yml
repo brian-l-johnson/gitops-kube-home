@@ -43,3 +43,5 @@ spec:
               mountPath: /config
             - name: downloads
               mountPath: /data
+      nodeSelector:
+          kubernetes.io/arch: amd64
