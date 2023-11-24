@@ -10,5 +10,5 @@ resources:
   #- awx
   - photoprism
   - memos
-  - sonarr
-  - sabnzbd
+  #- sonarr
+  #- sabnzbd
