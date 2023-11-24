@@ -16,7 +16,7 @@ spec:
         app: sabnzbd
     spec:
       volumes:
-        - name: sabnzbd-nfs
+        - name: sabnzbd-config
           persistentVolumeClaim:
             claimName: sabnzbd-config
         - name: downloads
