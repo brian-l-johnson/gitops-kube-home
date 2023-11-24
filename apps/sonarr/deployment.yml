@@ -27,9 +27,9 @@ spec:
           image: ghcr.io/hotio/sonarr:release-3.0.10.1567
           env: 
           - name: PUID
-            value: 1000
+            value: "1000"
           - name: PGID
-            value: 100
+            value: "100"
           - name: UMASK
             value: "002"
           - name: TZ
