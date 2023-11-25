@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homepage
+  labels:
+    app: homepage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homepage
+  template:
+    metadata:
+      labels:
+        app: homepage
+    spec:
+      volumes:
+        - name: homepage-nfs
+          persistentVolumeClaim:
+            claimName: homepage-nfs
+      containers:
+        - name: homepage
+          image: ghcr.io/gethomepage/homepage:v0.8.2
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: homepage-nfs
+              mountPath: /app/config
