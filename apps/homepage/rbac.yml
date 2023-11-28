@@ -42,15 +42,3 @@ rules:
       - customresourcedefinitions/status
     verbs:
       - get
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: read-cluseter
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: homepage-reader
-subjects:
-  - kind: ServiceAccount
-    name: homepage-reader
