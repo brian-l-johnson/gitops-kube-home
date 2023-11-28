@@ -6,6 +6,7 @@ resources:
   - pvc.yml
   - serviceaccount.yml
   - rbac.yml
+  - rolebinding.yml
   - deployment.yml
   - service.yml
   - ingress.yml
