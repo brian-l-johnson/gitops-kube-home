@@ -5,6 +5,7 @@ resources:
   - pv.yml
   - pvc.yml
   - serviceaccount.yml
+  - rbac.yml
   - deployment.yml
   - service.yml
   - ingress.yml
