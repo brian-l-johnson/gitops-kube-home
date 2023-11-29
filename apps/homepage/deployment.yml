@@ -14,6 +14,9 @@ spec:
       labels:
         app: homepage
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
       serviceAccountName: homepage-reader
       volumes:
         - name: homepage-nfs
