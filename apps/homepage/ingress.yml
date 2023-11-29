@@ -4,6 +4,7 @@ metadata:
   name: homepage-ingress
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: stepca-prod
 spec:
   rules:
   - host: homepage.kube.home
@@ -16,3 +17,7 @@ spec:
             name: homepage
             port:
               number: 3000
+  tls:
+    - secretName: homepage-tls
+      hosts:
+        - homepage.kube.home
