@@ -22,6 +22,9 @@ spec:
       containers:
         - name: mealie
           image: ghcr.io/mealie-recipes/mealie:v1.0.0-RC2
+          env:
+          - name: BASE_URL
+            value: "https://mealie.kube.home"
           ports:
             - containerPort: 9000
           volumeMounts:
