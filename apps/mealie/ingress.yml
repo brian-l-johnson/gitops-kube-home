@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: stepca-prod
   name: mealie
   namespace: mealie
 spec:
@@ -17,3 +18,7 @@ spec:
               number: 9000
         path: /
         pathType: Prefix
+  tls:
+    - secretName: mealie-tls
+      hosts:
+        - mealie.kube.home
