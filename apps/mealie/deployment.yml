@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mealie
+  namespace: mealie
+  labels:
+    app: mealie
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mealie
+  template:
+    metadata:
+      labels:
+        app: mealie
+    spec:
+      volumes:
+        - name: mealie-nfs
+          persistentVolumeClaim:
+            claimName: mealie-nfs
+      containers:
+        - name: mealie
+          image: ghcr.io/mealie-recipes/mealie:v1.0.0-RC2
+          ports:
+            - containerPort: 9000
+          volumeMounts:
+            - name: mealie-nfs
+              mountPath: /var/opt/mealie
