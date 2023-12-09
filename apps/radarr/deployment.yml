@@ -37,7 +37,7 @@ spec:
           ports:
             - containerPort: 7878
           volumeMounts:
-            - name: radarr-nfs
+            - name: radarr-config
               mountPath: /config
             - name: downloads
               mountPath: /data
