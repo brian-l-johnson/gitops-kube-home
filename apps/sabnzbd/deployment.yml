@@ -45,3 +45,9 @@ spec:
               mountPath: /data
       nodeSelector:
           kubernetes.io/arch: amd64
+          pvpn: true 
+      tolerations:
+          - key: "network"
+            operator: "Equal"
+            value: "pvpn"
+            effect: "NoSchedule"
