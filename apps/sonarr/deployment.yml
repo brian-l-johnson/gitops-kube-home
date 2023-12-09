@@ -41,3 +41,10 @@ spec:
               mountPath: /config
             - name: downloads
               mountPath: /data
+      nodeSelector:
+          pvpn: "true"
+      tolerations:
+          - key: "network"
+            operator: "Equal"
+            value: "pvpn"
+            effect: "NoSchedule"
