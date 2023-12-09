@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: radarr-volume
+  namespace: media
+spec:
+  capacity:
+    storage: 10Gi # This size is used to match a volume to a tenents claim
+  accessModes:
+    - ReadWriteOnce # Access modes are defined below
+  storageClassName: slow
+  nfs:
+    server: truenas.home # Please change this to your NFS server
+    path: /mnt/tank/kubestore/radarr # Please change this to the relevant share

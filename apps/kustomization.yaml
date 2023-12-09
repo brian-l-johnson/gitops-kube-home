@@ -11,6 +11,7 @@ resources:
   - photoprism
   - memos
   - sonarr
+  - radarr
   - sabnzbd
   - homepage
   - mealie
