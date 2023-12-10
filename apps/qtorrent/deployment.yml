@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qtorrent
+  namespace: media
+  labels:
+    app: qtorrent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qtorrent
+  template:
+    metadata:
+      labels:
+        app: qtorrent
+    spec:
+      volumes:
+        - name: qtorrent-config
+          persistentVolumeClaim:
+            claimName: qtorrent-config
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: download
+      containers:
+        - name: qtorrent
+          image: ghcr.io/hotio/qbittorrent:release-4.6.2
+          env: 
+          - name: PUID
+            value: "1000"
+          - name: PGID
+            value: "1000"
+          - name: UMASK
+            value: "002"
+          - name: TZ
+            value: "Etc/UTC"
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: qtorrent-config
+              mountPath: /config
+            - name: downloads
+              mountPath: /data
+      nodeSelector:
+          pvpn: "true"
+      tolerations:
+          - key: "network"
+            operator: "Equal"
+            value: "pvpn"
+            effect: "NoSchedule"
