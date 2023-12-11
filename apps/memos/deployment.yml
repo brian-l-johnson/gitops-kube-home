@@ -21,7 +21,7 @@ spec:
             claimName: memos-nfs
       containers:
         - name: memos
-          image: ghcr.io/usememos/memos:0.17.1
+          image: ghcr.io/usememos/memos:0.18.0
           ports:
             - containerPort: 5230
           volumeMounts:
