@@ -5,7 +5,7 @@ resources:
   - homebox
   - miniflux
   - home-monitor-frontend
-  #- uptime-kuma
+  - uptime-kuma
   #- browser
   #- awx
   - photoprism
