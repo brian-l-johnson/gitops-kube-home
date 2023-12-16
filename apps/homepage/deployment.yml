@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: homepage
+      annotations:
+        diun.enable: "true"
     spec:
       securityContext:
         runAsUser: 1000

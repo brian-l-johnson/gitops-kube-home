@@ -14,6 +14,8 @@ spec:
     metadata:
       labels:
         app: qtorrent
+      annotations:
+        diun.enable: "true"
     spec:
       volumes:
         - name: qtorrent-config

@@ -12,6 +12,8 @@ spec:
     metadata:
       labels:
         app: uptime-kuma
+      annotations:
+        diun.enable: "true"
     spec:
       # Mount the PVC
       volumes:

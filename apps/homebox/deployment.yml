@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: homebox
+      annotations:
+        diun.enable: "true"
     spec:
       volumes:
         - name: homebox-nfs

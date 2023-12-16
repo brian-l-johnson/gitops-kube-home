@@ -14,6 +14,8 @@ spec:
     metadata:
       labels:
         app: sabnzbd
+      annotations:
+        diun.enable: "true"
     spec:
       volumes:
         - name: sabnzbd-config
