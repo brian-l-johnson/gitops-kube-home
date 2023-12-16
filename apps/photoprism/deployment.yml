@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: photoprism
+      annotations:
+        diun.enable: "true"
     spec:
       nodeSelector:
           kubernetes.io/arch: amd64
