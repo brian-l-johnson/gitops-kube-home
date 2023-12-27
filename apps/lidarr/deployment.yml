@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lidarr
+  namespace: media
+  labels:
+    app: lidarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lidarr
+  template:
+    metadata:
+      labels:
+        app: lidarr
+      annotations:
+        diun.enable: "true"
+    spec:
+      volumes:
+        - name: lidarr-config
+          persistentVolumeClaim:
+            claimName: lidarr-config
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: download
+      containers:
+        - name: lidarr
+          image: ghcr.io/hotio/lidarr:release-2.0.7.3849
+          env: 
+          - name: PUID
+            value: "1000"
+          - name: PGID
+            value: "1000"
+          - name: UMASK
+            value: "002"
+          - name: TZ
+            value: "Etc/UTC"
+          ports:
+            - containerPort: 7878
+          volumeMounts:
+            - name: lidarr-config
+              mountPath: /config
+            - name: downloads
+              mountPath: /data
+      nodeSelector:
+          pvpn: "true"
+      tolerations:
+          - key: "network"
+            operator: "Equal"
+            value: "pvpn"
+            effect: "NoSchedule"

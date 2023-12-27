@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  name: lidarr
+  namespace: media
+spec:
+  rules:
+  - host: lidarr.kube.home
+    http:
+      paths:
+      - backend:
+          service:
+            name: lidarr-service
+            port:
+              number: 7878
+        path: /
+        pathType: Prefix
