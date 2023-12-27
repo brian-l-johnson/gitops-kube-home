@@ -6,7 +6,7 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 7878
+    port: 8686
     protocol: TCP
   selector:
     app: lidarr

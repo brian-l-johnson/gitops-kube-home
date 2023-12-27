@@ -37,7 +37,7 @@ spec:
           - name: TZ
             value: "Etc/UTC"
           ports:
-            - containerPort: 7878
+            - containerPort: 8686
           volumeMounts:
             - name: lidarr-config
               mountPath: /config
