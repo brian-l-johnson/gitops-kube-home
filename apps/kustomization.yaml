@@ -12,6 +12,7 @@ resources:
   - memos
   - sonarr
   - radarr
+  - lidarr
   - sabnzbd
   - homepage
   - mealie
