@@ -23,7 +23,7 @@ spec:
             claimName: mealie-nfs
       containers:
         - name: mealie
-          image: ghcr.io/mealie-recipes/mealie:v1.1.0
+          image: ghcr.io/mealie-recipes/mealie:v1.1.1
           env:
           - name: BASE_URL
             value: "https://mealie.kube.home"
