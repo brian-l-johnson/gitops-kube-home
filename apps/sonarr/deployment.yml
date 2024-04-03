@@ -26,7 +26,7 @@ spec:
             claimName: download
       containers:
         - name: sonarr
-          image: ghcr.io/hotio/sonarr:release-4.0.1.929
+          image: ghcr.io/hotio/sonarr:release-4.0.3.1413
           env: 
           - name: PUID
             value: "1000"
