@@ -20,7 +20,7 @@ spec:
           kubernetes.io/arch: amd64
       containers:
       - name: photoprism
-        image: photoprism/photoprism:231128
+        image: photoprism/photoprism:240420
         env:
         - name: PHOTOPRISM_DEBUG
           value: "true"

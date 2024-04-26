@@ -26,7 +26,7 @@ spec:
             claimName: download
       containers:
         - name: qtorrent
-          image: ghcr.io/hotio/qbittorrent:release-87b7a81
+          image: ghcr.io/hotio/qbittorrent:release-4.6.4
           env: 
           - name: PUID
             value: "1000"

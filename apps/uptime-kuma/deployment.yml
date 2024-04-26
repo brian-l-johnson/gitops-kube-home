@@ -22,7 +22,7 @@ spec:
             claimName: uptime-data-claim
       containers:
         - name: uptime-kuma
-          image: louislam/uptime-kuma:1.23.11
+          image: louislam/uptime-kuma:1.23.13
           # expose the container's port
           ports:
             - containerPort: 3001
