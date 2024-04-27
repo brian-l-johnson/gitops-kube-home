@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: stepca-prod
   name: memos
   namespace: memos
 spec:
@@ -17,3 +18,7 @@ spec:
               number: 5230
         path: /
         pathType: Prefix
+  tls:
+    - secretName: memos-tls
+      hosts:
+        - memos.kube.home
