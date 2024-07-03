@@ -10,13 +10,13 @@ resources:
   #- awx
   - photoprism
   - memos
-  - sonarr
-  - radarr
-  - lidarr
+  #- sonarr
+  #- radarr
+  #- lidarr
   - sabnzbd
   - homepage
   - mealie
-  - qtorrent
-  - prowlarr
+  #- qtorrent
+  #- prowlarr
   - duin
   
