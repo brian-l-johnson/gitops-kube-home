@@ -16,7 +16,7 @@ resources:
   - sabnzbd
   - homepage
   - mealie
-  - qtorrent
+  #- qtorrent
   - prowlarr
   - duin
   
