@@ -26,7 +26,7 @@ spec:
             claimName: download
       containers:
         - name: sabnzbd
-          image: ghcr.io/hotio/sabnzbd:release-4.3.1
+          image: ghcr.io/hotio/sabnzbd:release-4.3.2
           env: 
           - name: PUID
             value: "1000"
