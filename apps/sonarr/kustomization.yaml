@@ -9,4 +9,4 @@ resources:
   - pvc-download.yml
   - deployment.yml
   - service.yml
-  - ingress.yml
+#  - ingress.yml
