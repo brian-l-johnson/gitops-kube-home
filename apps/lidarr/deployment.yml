@@ -26,7 +26,7 @@ spec:
             claimName: download
       containers:
         - name: lidarr
-          image: ghcr.io/hotio/lidarr:release-2.3.3.4204
+          image: ghcr.io/hotio/lidarr:release-2.4.3.4248
           env: 
           - name: PUID
             value: "1000"

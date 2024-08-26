@@ -18,7 +18,7 @@ spec:
         diun.enable: "true"
     spec:
       containers:
-        - image: miniflux/miniflux:2.1.2
+        - image: miniflux/miniflux:2.2.0
           name: app
           env:
           # This is necessary for the miniflux to update the db schema, even on an empty DB
