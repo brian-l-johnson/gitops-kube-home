@@ -18,6 +18,7 @@ spec:
     spec:
       nodeSelector:
           kubernetes.io/arch: amd64
+          wordload: general
       containers:
       - name: photoprism
         image: photoprism/photoprism:240711
@@ -63,5 +64,3 @@ spec:
         nfs:
           path: /mnt/tank/kubestore/photoprism/storage
           server: truenas.home
-      nodeSelector:
-        workload: general
