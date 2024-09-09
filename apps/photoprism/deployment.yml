@@ -63,3 +63,5 @@ spec:
         nfs:
           path: /mnt/tank/kubestore/photoprism/storage
           server: truenas.home
+      nodeSelector:
+        workload: general

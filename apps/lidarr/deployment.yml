@@ -45,6 +45,7 @@ spec:
               mountPath: /data
       nodeSelector:
           pvpn: "true"
+          workload: general
       tolerations:
           - key: "network"
             operator: "Equal"

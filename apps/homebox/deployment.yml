@@ -30,3 +30,4 @@ spec:
               mountPath: /data
       nodeSelector:
           kubernetes.io/arch: amd64
+          workload: general

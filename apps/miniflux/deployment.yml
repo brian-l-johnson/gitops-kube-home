@@ -38,3 +38,5 @@ spec:
               secretKeyRef:
                 name: miniflux-credentials
                 key: database-url.secret
+      nodeSelector:
+        workload: general

@@ -48,6 +48,7 @@ spec:
       nodeSelector:
           kubernetes.io/arch: amd64
           pvpn: "true" 
+          workload: "general"
       tolerations:
           - key: "network"
             operator: "Equal"

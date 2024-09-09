@@ -30,3 +30,5 @@ spec:
           volumeMounts:
             - mountPath: '/app/data'
               name: data-mount
+      nodeSelector:
+        workload: general
