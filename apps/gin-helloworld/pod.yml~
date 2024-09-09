@@ -11,3 +11,5 @@ spec:
       image: docker-registry.home:5000/gin-helloworld:2.0
       ports:
         - containerPort: 8888
+  nodeSelector:
+    workload: general
