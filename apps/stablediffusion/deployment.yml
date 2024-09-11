@@ -34,7 +34,7 @@ spec:
           ports:
             - containerPort: 8501
           volumeMounts:
-            - name: sd
+            - name: sd-nfs
               mountPath: /sd/outputs
       nodeSelector:
           kubernetes.io/arch: amd64
