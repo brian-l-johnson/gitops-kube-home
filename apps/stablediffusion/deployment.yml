@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: sd
   labels:
-    app: df
+    app: sd
 spec:
   replicas: 1
   selector:
