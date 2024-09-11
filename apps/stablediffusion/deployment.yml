@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sd
+  labels:
+    app: df
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sd
+  template:
+    metadata:
+      labels:
+        app: sd
+      annotations:
+        diun.enable: "true"
+    spec:
+      runtimeClassName: nvidia
+      volumes:
+        - name: sd-nfs
+          persistentVolumeClaim:
+            claimName: sd-nfs
+      containers:
+        - name: sd
+          image: tukirito/sygil-webui:latest
+          env:
+          - name: STREAMLIT_SERVER_HEADLESS
+            value: "true"
+          - name: WEBUI_SCRIPT
+            value: webui_streamlit.py
+          - name: VALIDATE_MODELS
+            value: "false"
+          ports:
+            - containerPort: 8501
+          volumeMounts:
+            - name: sd
+              mountPath: /sd/outputs
+      nodeSelector:
+          kubernetes.io/arch: amd64
+          workload: gpu
