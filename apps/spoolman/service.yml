@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spoolman-service
+  namespace: media
+spec:
+  ports:
+  - name: http
+    port: 8000
+    protocol: TCP
+  selector:
+    app: spoolman
+  type: ClusterIP
+  

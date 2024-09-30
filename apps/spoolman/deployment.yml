@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spoolman
+  namespace: default
+  labels:
+    app: spoolman
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spoolman
+  template:
+    metadata:
+      labels:
+        app: spoolman
+      annotations:
+        diun.enable: "true"
+    spec:
+      volumes:
+        - name: spoolman-data
+          persistentVolumeClaim:
+            claimName: spoolman-data
+      containers:
+        - name: spoolman
+          image: ghcr.io/donkie/spoolman:0.20.0
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: spoolman-data
+              mountPath: /home/app/.local/share/spoolman 
+      nodeSelector:
+          workload: general
