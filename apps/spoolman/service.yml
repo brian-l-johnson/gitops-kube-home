@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: spoolman-service
-  namespace: media
+  namespace: default
 spec:
   ports:
   - name: http
