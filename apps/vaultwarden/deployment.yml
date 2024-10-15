@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vaultwarden
+  namespace: default
+  labels:
+    app: vaultwarden
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vaultwarden
+  template:
+    metadata:
+      labels:
+        app: vaultwarden
+      annotations:
+        diun.enable: "true"
+    spec:
+      volumes:
+        - name: vaultwarden-data
+          persistentVolumeClaim:
+            claimName: vaultwarden-data
+      containers:
+        - name: vaultwarden
+          image: vaultwarden/server:1.32.2
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: vaultwarden-data
+              mountPath: /vw-data
+      nodeSelector:
+          workload: general
