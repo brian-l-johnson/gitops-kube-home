@@ -28,6 +28,6 @@ spec:
             - containerPort: 80
           volumeMounts:
             - name: vaultwarden-data
-              mountPath: /vw-data
+              mountPath: /data
       nodeSelector:
           workload: general
