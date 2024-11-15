@@ -28,7 +28,7 @@ spec:
             - containerPort: 11434
           volumeMounts:
             - name: ollama-nfs
-              mountPath: /ollama/outputs
+              mountPath: /root/.ollama
       nodeSelector:
           kubernetes.io/arch: amd64
           workload: gpu
