@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama
+  labels:
+    app: ollama
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ollama
+  template:
+    metadata:
+      labels:
+        app: ollama
+      annotations:
+        diun.enable: "true"
+    spec:
+      runtimeClassName: nvidia
+      volumes:
+        - name: ollama-nfs
+          persistentVolumeClaim:
+            claimName: ollama-nfs
+      containers:
+        - name: ollama
+          image: ollama/ollama
+          ports:
+            - containerPort: 11434
+          volumeMounts:
+            - name: ollama-nfs
+              mountPath: /ollama/outputs
+      nodeSelector:
+          kubernetes.io/arch: amd64
+          workload: gpu

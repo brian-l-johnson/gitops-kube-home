@@ -19,6 +19,7 @@ resources:
   - qtorrent
   - prowlarr
   - duin
-  - stablediffusion
+  #- stablediffusion
   - spoolman
   - vaultwarden
+  - ollama

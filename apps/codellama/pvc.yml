@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ollama-nfs
+spec:
+  storageClassName: slow
+  accessModes:
+    - ReadWriteOnce # Access modes for volumes is defined under Persistent Volumes
+  resources:
+    requests:
+      storage: 32Gi # volume size requested
