@@ -22,4 +22,4 @@ resources:
   #- stablediffusion
   - spoolman
   - vaultwarden
-  - ollama
+  #- ollama
