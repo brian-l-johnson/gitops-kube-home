@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  name: trillium
+  namespace: default
+spec:
+  rules:
+  - host: trillium.kube.home
+    http:
+      paths:
+      - backend:
+          service:
+            name: trillium-service
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trillium
+  namespace: default
+  labels:
+    app: trillium
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trillium
+  template:
+    metadata:
+      labels:
+        app: trillium
+      annotations:
+        diun.enable: "true"
+    spec:
+      volumes:
+        - name: trillium-data
+          persistentVolumeClaim:
+            claimName: trillium-data
+      containers:
+        - name: trillium
+          image: triliumnext/notes:v0.90.8
+          env: 
+          - name: PUID
+            value: "1000"
+          - name: PGID
+            value: "1000"
+          - name: UMASK
+            value: "002"
+          - name: TZ
+            value: "Etc/UTC"
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: trillium-data
+              mountPath: /home/node/trilium-data
+      nodeSelector:
+          workload: general
