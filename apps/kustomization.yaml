@@ -24,4 +24,4 @@ resources:
   - vaultwarden
   - ollama
   - meshtastic
-  - trillum
+  - trillium
