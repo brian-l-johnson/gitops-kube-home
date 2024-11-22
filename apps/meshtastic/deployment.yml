@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meshtastic
+  labels:
+    app: meshtastic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: meshtastic
+  template:
+    metadata:
+      labels:
+        app: meshtastic
+      annotations:
+        diun.enable: "true"
+    spec:
+      containers:
+        - name: meshtastic
+          image: ghcr.io/meshtastic/web:72fc3ea3372e6c1d26edda790b033109f68d17f8
+          ports:
+            - containerPort: 8080
+      nodeSelector:
+        workload: general

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: meshtastic-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: stepca-prod
+spec:
+  rules:
+  - host: meshtastic.kube.home
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: meshtastic
+            port:
+              number: 8080
+  tls:
+    - secretName: meshtastic-tls
+      hosts:
+        - meshtastic.kube.home
