@@ -9,8 +9,8 @@ spec:
   type: NodePort
   ports:
     # Maps the container's port to 80. If you want to use it on a different port, change it here.
-    - port: 3000
-      targetPort: 3000
+    - port: 8080
+      targetPort: 8080
       protocol: TCP
   selector:
     app: openweb

@@ -28,7 +28,7 @@ spec:
             value: http://ollama.kube.home
           # expose the container's port
           ports:
-            - containerPort: 3000
+            - containerPort: 8080
           # Pass the mount into the container
           volumeMounts:
             - mountPath: '/app/backend/data'
