@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: openweb
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: stepca-prod
+spec:
+  rules:
+  - host: openweb.kube.home
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: openweb
+            port:
+              number: 3000
+  tls:
+    - secretName: openweb-tls
+      hosts:
+        - openweb.kube.home

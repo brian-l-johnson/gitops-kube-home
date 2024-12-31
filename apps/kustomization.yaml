@@ -25,3 +25,4 @@ resources:
   - ollama
   - meshtastic
   - trillium
+  - openweb

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openweb
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openweb
+  template:
+    metadata:
+      labels:
+        app: openweb
+      annotations:
+        diun.enable: "true"
+    spec:
+      # Mount the PVC
+      volumes:
+        - name: openweb-data
+          persistentVolumeClaim:
+            claimName: openweb-data-claim
+      containers:
+        - name: openweb
+          image: ghcr.io/open-webui/open-webui:git-2299f48
+          # expose the container's port
+          ports:
+            - containerPort: 3000
+          # Pass the mount into the container
+          volumeMounts:
+            - mountPath: '/app/backend/data'
+              name: openweb-data
+      nodeSelector:
+        workload: general
