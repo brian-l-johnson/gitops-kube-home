@@ -22,7 +22,7 @@ spec:
             claimName: openweb-data-claim
       containers:
         - name: openweb
-          image: ghcr.io/open-webui/open-webui:git-2299f48
+          image: ghcr.io/open-webui/open-webui:0.5.3
           env:
           - name: OLLAMA_BASE_URL
             value: http://ollama.kube.home
