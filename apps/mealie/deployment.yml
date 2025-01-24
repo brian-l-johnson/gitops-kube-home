@@ -27,6 +27,12 @@ spec:
           env:
           - name: BASE_URL
             value: "https://mealie.kube.home"
+          - name: OPENAPI_BASE_URL
+            value: "http://ollama.kube.home"
+          - name: OPENAI_API_KEY
+            value: foobar
+          - name: OPENAI_MODEL
+            value: llama3.1:8b
           ports:
             - containerPort: 9000
           volumeMounts:
