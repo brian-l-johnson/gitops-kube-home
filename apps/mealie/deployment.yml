@@ -32,7 +32,7 @@ spec:
           - name: OPENAI_API_KEY
             value: foobar
           - name: OPENAI_MODEL
-            value: llama3.1:8b
+            value: llava-llama3
           ports:
             - containerPort: 9000
           volumeMounts:
