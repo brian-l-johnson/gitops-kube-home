@@ -27,7 +27,7 @@ spec:
           env:
           - name: BASE_URL
             value: "https://mealie.kube.home"
-          - name: OPENAPI_BASE_URL
+          - name: OPENAI_BASE_URL
             value: "http://ollama.kube.home"
           - name: OPENAI_API_KEY
             value: foobar
