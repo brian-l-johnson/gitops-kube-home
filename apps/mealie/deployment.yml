@@ -26,7 +26,7 @@ spec:
           image: ghcr.io/mealie-recipes/mealie:v2.5.0
           env:
           - name: BASE_URL
-            value: "https://mealie.kube.home"
+            value: "https://mealie.home.brianljohnson.org"
           - name: OPENAI_BASE_URL
             value: "http://ollama.kube.home:80/v1"
           - name: OPENAI_API_KEY
