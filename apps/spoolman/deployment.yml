@@ -23,7 +23,7 @@ spec:
             claimName: spoolman-data
       containers:
         - name: spoolman
-          image: ghcr.io/donkie/spoolman:0.20.0
+          image: ghcr.io/donkie/spoolman:0.22.1
           ports:
             - containerPort: 8000
           volumeMounts:

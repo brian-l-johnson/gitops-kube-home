@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: meshtastic
-          image: ghcr.io/meshtastic/web:633b99d6b26053b54135dc70e11f77ded1cef57f
+          image: ghcr.io/meshtastic/web:08dbe946796092022086fbf7fa388f898fee60c9
           ports:
             - containerPort: 8080
       nodeSelector:
