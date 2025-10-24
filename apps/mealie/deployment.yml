@@ -23,7 +23,7 @@ spec:
             claimName: mealie-nfs
       containers:
         - name: mealie
-          image: ghcr.io/mealie-recipes/mealie:v2.8.0
+          image: ghcr.io/mealie-recipes/mealie:v3.3.2
           env:
           - name: BASE_URL
             value: "https://mealie.home.brianljohnson.org"
